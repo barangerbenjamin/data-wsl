@@ -31,3 +31,11 @@ add `export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
 Start xming with `-ac` additional parameters.
 
 Add entry for Xming in Windows Defender
+
+# Running code from VsCode
+
+VsCode `Ctrl + F5` equivalent to Sublime `Cmd + B` get a *connection refused*.
+
+Fix is same as above with Xming.
+
+Need entries for VsCode in Windows Defender.
