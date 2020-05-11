@@ -23,7 +23,7 @@ Getting the following error *qt.qpa.screen: QXcbConnection: Could not connect to
 Could not connect to any X display.* instead of seeing a new window with the graph
 
 **FIX**
-Install Xming
-add `export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0` to `~/.zshrc`
-start xming with `-ac` additional parameters
+Install Xming.
+add `export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0` to `~/.zshrc`.
+Start xming with `-ac` additional parameters.
 Add entry for Xming in Windows Defender
