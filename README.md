@@ -16,3 +16,14 @@ SQL Window Functions are only supported in SQLITE3 > 3.25.0
 TODO => Find a work around
 
 Jupyter might support Python 3.8 by then and the problem will be no more
+
+# Matplotlib in python file
+
+Getting the following error *qt.qpa.screen: QXcbConnection: Could not connect to display 172.27.48.1:0
+Could not connect to any X display.* instead of seeing a new window with the graph
+
+**FIX**
+Install Xming
+add `export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0` to `~/.zshrc`
+start xming with `-ac` additional parameters
+Add entry for Xming in Windows Defender
