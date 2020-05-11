@@ -39,3 +39,5 @@ VsCode `Ctrl + F5` equivalent to Sublime `Cmd + B` get a *connection refused*.
 Fix is same as above with Xming.
 
 Need entries for VsCode in Windows Defender.
+
+Need to hit `Ctrl + Shift +f5` to reload.
