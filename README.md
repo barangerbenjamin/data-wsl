@@ -24,6 +24,9 @@ Could not connect to any X display.* instead of seeing a new window with the gra
 
 **FIX**
 Install Xming.
+
 add `export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0` to `~/.zshrc`.
+
 Start xming with `-ac` additional parameters.
+
 Add entry for Xming in Windows Defender
