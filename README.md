@@ -9,6 +9,7 @@ cd ~
 curl https://raw.githubusercontent.com/barangerbenjamin/data-wsl/master/setup.sh > setup.sh
 curl https://raw.githubusercontent.com/barangerbenjamin/data-wsl/master/dialogrc > .dialogrc
 sudo chmod +x setup.sh
+./setup.sh
 ```
 
 # Jupyter
