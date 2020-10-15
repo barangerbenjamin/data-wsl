@@ -11,7 +11,7 @@ Work in progress on the automation of LW DS Bootcamp
 - [x] Oh-My-Zsh
 - [x] Ssh key generation
 - [x] Check effective connection
-- [x] Implement gh cli
+- [ ] Implement gh cli
 - [x] Dotfiles install + git setup
 - [x] Python install
 - [ ] Python virtual env
