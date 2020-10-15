@@ -1,5 +1,25 @@
 Work in progress on the automation of LW DS Bootcamp
 
+# Plan of action
+
+## Automation
+
+- [x] WSL prerequisites
+- [x]  Utilities install
+- [ ] WSL install
+- [x] Shell utilities (vim, curl ...)
+- [x] Oh-My-Zsh
+- [x] Ssh key generation
+- [x] Check effective connection
+- [x] Implement gh cli
+- [x] Dotfiles install + git setup
+- [x] Python install
+- [ ] Python virtual env
+- [x] Python packages
+- [ ] Run all option
+## Documentation
+- [ ] Write how to use
+
 # Installation
 
 ```bash
