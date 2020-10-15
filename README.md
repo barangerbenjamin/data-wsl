@@ -1,5 +1,14 @@
 The point of the this repo is to keep track of problems that might occurs on a data WSL2 setup
 
+# Installation
+
+```bash
+sudo apt update
+sudo apt install -y dialog
+curl https://raw.githubusercontent.com/lewagon/setup/master/images/apple.png > setup.sh
+sudo chmod +x setup.sh
+```
+
 # Jupyter
 
 To make Jupyter work by default it is necessary to deactivate windows defender on public network interface (WSL2 uses that!).
