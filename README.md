@@ -5,7 +5,9 @@ The point of the this repo is to keep track of problems that might occurs on a d
 ```bash
 sudo apt update
 sudo apt install -y dialog
-curl https://raw.githubusercontent.com/lewagon/setup/master/images/apple.png > setup.sh
+cd ~
+curl https://raw.githubusercontent.com/barangerbenjamin/data-wsl/master/setup.sh > setup.sh
+curl https://raw.githubusercontent.com/barangerbenjamin/data-wsl/dialogrc > .dialogrc
 sudo chmod +x setup.sh
 ```
 
