@@ -1,8 +1,5 @@
 #!/bin/bash
 
-sudo apt update
-sudo apt install -y dialog
-
 TERMINAL=$(tty)
 HEIGHT=25
 WIDTH=70
