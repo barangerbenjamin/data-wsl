@@ -7,7 +7,7 @@ sudo apt update
 sudo apt install -y dialog
 cd ~
 curl https://raw.githubusercontent.com/barangerbenjamin/data-wsl/master/setup.sh > setup.sh
-curl https://raw.githubusercontent.com/barangerbenjamin/data-wsl/dialogrc > .dialogrc
+curl https://raw.githubusercontent.com/barangerbenjamin/data-wsl/master/dialogrc > .dialogrc
 sudo chmod +x setup.sh
 ```
 
