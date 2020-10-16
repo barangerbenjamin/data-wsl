@@ -96,6 +96,7 @@ case $CHOICE in
 		source ~/.zshrc
 		;;
 	9)
+    source ~/.zshrc
 		pip install --upgrade pip
 		pip install pytest pylint ipdb pyyaml
 		pip install requests bs4
