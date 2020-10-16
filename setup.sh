@@ -88,10 +88,9 @@ case $CHOICE in
 		pyenv install 3.8.5
 		pyenv global 3.8.5
 		python --version
-		source ~/.zshrc
 		;;
 	8)
-		sudo git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+		git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 		pyenv virtualenv 3.8.5 lewagon
 		source ~/.zshrc
 		;;
