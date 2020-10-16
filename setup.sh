@@ -90,9 +90,9 @@ case $CHOICE in
 		python --version
 		;;
 	8)
-    source ~/.zshrc
+    	source ~/.zshrc
 		sudo git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-    source ~/.zshrc
+    	source ~/.zshrc
 		pyenv virtualenv 3.8.5 lewagon
 		pyenv activate lewagon
 		;;
