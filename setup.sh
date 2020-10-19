@@ -54,7 +54,7 @@ case $CHOICE in
 	5)
 		cat ~/.ssh/id_ed25519.pub
 		echo -e "\n"
-		ssh -T git@github.com
+		ssh -T -y git@github.com
 		;;
 	6)
 		echo -e "What is your Github username?\n"
