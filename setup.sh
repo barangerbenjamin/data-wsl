@@ -63,15 +63,19 @@ case $CHOICE in
         echo "You need to untick 'Keep my email address private' at https://github.com/settings/emails"
     else
         mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C $email
-        echo -e "\n"
-        cat ~/.ssh/id_ed25519.pub
-        echo -e "\n"
+        curl \
+          -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/user/keys \
+          -d '{"key":"'"$ssh_key"'"}' \
+          --user "$login"
+        ssh -T git@github.com
     fi
 	  ;;
 	5)
 		cat ~/.ssh/id_ed25519.pub
 		echo -e "\n"
-		ssh -Ty git@github.com
+		ssh -T git@github.com
 		;;
 	6)
 		echo -e "What is your Github username?\n"
