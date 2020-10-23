@@ -58,6 +58,7 @@ case $CHOICE in
     gh auth login
     login=$(gh api user | jq -r '.login')
     email=$(gh api user | jq -r '.email')
+    name=$(gh api user | jq -r '.name')
     if [[ "$email" == "null" ]]; then
         echo "You need to untick 'Keep my email address private' at https://github.com/settings/emails"
     else
