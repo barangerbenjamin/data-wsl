@@ -28,7 +28,7 @@ clear
 case $CHOICE in
  	1)
  		sudo apt update
-		sudo apt install -y git zsh curl vim
+		sudo apt install -y git zsh curl vim jq
 		;;														
 	2)
 		sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -37,20 +37,36 @@ case $CHOICE in
 		sh "/home/`whoami`/.oh-my-zsh/tools/uninstall.sh"	
 		;;
 	4)
-		echo -e "What is your Github email?\n"
- 		read email
-		echo -e "Confirm your Github email\n"
-		read email2
-		if [ "$email" == "$email2" ]; then
-			mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C $email
-			echo -e "\n"
-			cat ~/.ssh/id_ed25519.pub
-			echo -e "\n"
-			GREEN='\033[0;32m'
-			echo -e "$GREEN Go to https://github.com/settings/ssh to add your new ssh key"
-		else
-			echo "Sorry, emails don't match"
-		fi															;;
+		#echo -e "What is your Github email?\n"
+ 		#read email
+		#echo -e "Confirm your Github email\n"
+		#read email2
+		#if [ "$email" == "$email2" ]; then
+			#mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C $email
+			#echo -e "\n"
+			#cat ~/.ssh/id_ed25519.pub
+			#echo -e "\n"
+			#GREEN='\033[0;32m'
+			#echo -e "$GREEN Go to https://github.com/settings/ssh to add your new ssh key"
+		#else
+			#echo "Sorry, emails don't match"
+		#fi
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+    sudo apt-add-repository https://cli.github.com/packages
+    sudo apt update
+    sudo apt install gh
+    gh auth login
+    login=$(gh api user | jq -r '.login')
+    email=$(gh api user | jq -r '.email')
+    if [ "$email" -ne $null ]; then
+        mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C $email
+        echo -e "\n"
+        cat ~/.ssh/id_ed25519.pub
+        echo -e "\n"
+    else
+      echo "You need to untick 'Keep my email address private' at https://github.com/settings/emails "
+    fi
+	  ;;
 	5)
 		cat ~/.ssh/id_ed25519.pub
 		echo -e "\n"
