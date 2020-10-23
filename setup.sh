@@ -58,13 +58,13 @@ case $CHOICE in
     gh auth login
     login=$(gh api user | jq -r '.login')
     email=$(gh api user | jq -r '.email')
-    if [ "$email" -ne $null ]; then
+    if [[ "$email" == "null" ]]; then
+        echo "You need to untick 'Keep my email address private' at https://github.com/settings/emails"
+    else
         mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C $email
         echo -e "\n"
         cat ~/.ssh/id_ed25519.pub
         echo -e "\n"
-    else
-      echo "You need to untick 'Keep my email address private' at https://github.com/settings/emails "
     fi
 	  ;;
 	5)
