@@ -63,6 +63,7 @@ case $CHOICE in
         echo "You need to untick 'Keep my email address private' at https://github.com/settings/emails"
     else
         mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C $email
+        ssh_key=$(cat ~/.ssh/id_ed25519.pub)
         curl \
           -X POST \
           -H "Accept: application/vnd.github.v3+json" \
